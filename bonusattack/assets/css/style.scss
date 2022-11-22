@@ -1,0 +1,2170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Squada+One&display=swap');
+
+$large-breakpoint: 1330px;
+$medium-breakpoint: 991px;
+$small-breakpoint: 767px;
+$mini-breakpoint: 575px;
+
+*:focus {
+  outline: 0;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+svg {
+  overflow: hidden;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 12px;
+}
+
+.header {
+  background: url(assets/images/header_bg.png);
+
+  .header-container {
+    width: 1300px;
+    margin: 0 auto;
+    position: relative;
+
+    .logo-menu-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 0 0 0;
+
+      .logo {
+        a {
+          svg {
+            width: 220px;
+            height: 40px;
+            flex-shrink: 0;
+
+            @media only screen and (max-width: $mini-breakpoint) {
+              width: 200px;
+              height: 35px;
+            }
+          }
+        }
+      }
+
+      .menu {
+        .menu-main-menu-container {
+          ul {
+            display: flex;
+
+            li {
+              list-style: none;
+              margin-left: 55px;
+
+              a {
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400;
+                text-transform: uppercase;
+                color: #ffffff;
+                font-size: 22px;
+                line-height: 33.5px;
+                transition: .5s;
+
+                &:hover {
+                  color: #ffe42c;
+                }
+
+                @media only screen and (max-width: $large-breakpoint) {
+                  font-size: 20px;
+                }
+              }
+
+              &.current-menu-item {
+                a {
+                  color: #ffe42c;
+                }
+              }
+            }
+          }
+        }
+
+        @media only screen and (max-width: $medium-breakpoint) {
+          display: none;
+        }
+      }
+    }
+
+    .menu-breakpoint {
+      top: 89px;
+      left: -124%;
+      position: absolute;
+      transition: .8s;
+      z-index: 9;
+      width: 100%;
+
+      .menu-main-menu-container {
+        ul {
+          background: #020516;
+          flex-direction: column;
+
+          li {
+            list-style: none;
+            height: 70px;
+
+            a {
+              font-family: 'Roboto', sans-serif;
+              font-weight: 400;
+              text-transform: uppercase;
+              color: #ffffff;
+              font-size: 22px;
+              line-height: 33.5px;
+              transition: .5s;
+              white-space: nowrap;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              padding: 0 55px;
+              justify-content: center;
+
+              &:hover {
+                color: #ffe42c;
+              }
+
+              @media only screen and (max-width: $mini-breakpoint) {
+                font-size: 20px;
+              }
+            }
+
+            &.current-menu-item {
+              a {
+                color: #ffe42c;
+              }
+            }
+          }
+        }
+      }
+
+      &.is-active {
+        @media only screen and (max-width: $medium-breakpoint) {
+          left: 0;
+          z-index: 999999;
+        }
+      }
+    }
+
+    .hamburger {
+      place-items: center;
+      height: 43px;
+      width: 50px;
+      position: absolute;
+      top: 30px;
+      right: 19px;
+      cursor: pointer;
+      display: none;
+
+      .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background: #ffe42c;
+        margin: 6px 0;
+        transition: .5s;
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          height: 4px;
+        }
+      }
+
+      &.is-active {
+        .bar1 {
+          transform: rotate(-45deg) translate(-9px, 6px);
+          background: #ffffff;
+
+          @media only screen and (max-width: $mini-breakpoint) {
+            transform: rotate(-45deg) translate(-6px, 6px);
+          }
+        }
+
+        .bar2 {
+          opacity: 0;
+        }
+
+        .bar3 {
+          transform: rotate(45deg) translate(-8px, -8px);
+          background: #ffffff;
+        }
+      }
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        display: block;
+      }
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        top: 29px;
+        right: 7px;
+      }
+    }
+
+    .header-title {
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 87px 0 250px 0;
+      text-align: center;
+
+      h5 {
+        font-size: 46px;
+        line-height: 40px;
+        margin-bottom: 20px;
+        font-family: 'Squada One', cursive;
+        font-weight: 400;
+
+        @media only screen and (max-width: $small-breakpoint) {
+          font-size: 38px;
+        }
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          font-size: 35px;
+        }
+      }
+
+      h6 {
+        font-size: 36px;
+        line-height: 40px;
+        font-family: 'Squada One', cursive;
+        font-weight: 400;
+
+        @media only screen and (max-width: $small-breakpoint) {
+          font-size: 34px;
+        }
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          font-size: 28px;
+        }
+      }
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        padding: 87px 0 55px 0;
+      }
+    }
+
+    @media only screen and (max-width: $large-breakpoint) {
+      width: 100%;
+      padding: 0 15px;
+    }
+  }
+}
+
+.second-header {
+  background: #293952;
+
+  .header-container {
+    width: 1300px;
+    margin: 0 auto;
+    position: relative;
+
+    .logo-menu-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 0 30px 0;
+
+      .logo {
+        a {
+          svg {
+            width: 220px;
+            height: 40px;
+            flex-shrink: 0;
+
+            @media only screen and (max-width: $mini-breakpoint) {
+              width: 200px;
+              height: 35px;
+            }
+          }
+        }
+      }
+
+      .menu {
+        .menu-main-menu-container {
+          ul {
+            display: flex;
+
+            li {
+              list-style: none;
+              margin-left: 55px;
+
+              a {
+                color: #ffffff;
+                font-size: 22px;
+                line-height: 33.5px;
+                transition: .5s;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400;
+                text-transform: uppercase;
+
+                &:hover {
+                  color: #ffe42c;
+                }
+
+                @media only screen and (max-width: $large-breakpoint) {
+                  font-size: 20px;
+                }
+              }
+
+              &.current-menu-item {
+                a {
+                  color: #ffe42c;
+                }
+              }
+            }
+          }
+        }
+
+        @media only screen and (max-width: $medium-breakpoint) {
+          display: none;
+        }
+      }
+    }
+
+    .menu-breakpoint {
+      top: 89px;
+      left: -124%;
+      position: absolute;
+      transition: .8s;
+      z-index: 9;
+      width: 100%;
+
+      .menu-main-menu-container {
+        ul {
+          background: #020516;
+          flex-direction: column;
+
+          li {
+            list-style: none;
+            height: 70px;
+
+            a {
+              color: #ffffff;
+              font-size: 22px;
+              line-height: 33.5px;
+              transition: .5s;
+              white-space: nowrap;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              padding: 0 55px;
+              justify-content: center;
+
+              &:hover {
+                color: #ffe42c;
+              }
+
+              @media only screen and (max-width: $mini-breakpoint) {
+                font-size: 20px;
+              }
+            }
+
+            &.current-menu-item {
+              a {
+                color: #ffe42c;
+              }
+            }
+          }
+        }
+      }
+
+      &.is-active {
+        @media only screen and (max-width: $medium-breakpoint) {
+          left: 0;
+          z-index: 999999;
+        }
+      }
+    }
+
+    .hamburger {
+      place-items: center;
+      height: 43px;
+      width: 50px;
+      position: absolute;
+      top: 30px;
+      right: 19px;
+      cursor: pointer;
+      display: none;
+
+      .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background: #ffe42c;
+        margin: 6px 0;
+        transition: .5s;
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          height: 4px;
+        }
+      }
+
+      &.is-active {
+        .bar1 {
+          transform: rotate(-45deg) translate(-9px, 6px);
+          background: #ffffff;
+
+          @media only screen and (max-width: $mini-breakpoint) {
+            transform: rotate(-45deg) translate(-6px, 6px);
+          }
+        }
+
+        .bar2 {
+          opacity: 0;
+        }
+
+        .bar3 {
+          transform: rotate(45deg) translate(-8px, -8px);
+          background: #ffffff;
+        }
+      }
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        display: block;
+      }
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        top: 29px;
+        right: 7px;
+      }
+    }
+
+    @media only screen and (max-width: $large-breakpoint) {
+      width: 100%;
+      padding: 0 15px;
+    }
+  }
+}
+
+.page-container {
+  background: url(assets/images/webpage_background.png);
+
+  .page-content {
+    width: 1300px;
+    margin: 0 auto;
+    position: relative;
+
+    @media only screen and (max-width: $large-breakpoint) {
+      width: 100%;
+      padding: 0 15px;
+    }
+  }
+
+  &.single-post-page {
+    background: none;
+  }
+}
+
+.casino-menu-absolute {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: -102px;
+
+  .menu-homepage-menu-container {
+    padding: 0 0 0 0;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      li {
+        list-style: none;
+        width: calc(20% - 25px);
+        height: 200px;
+        border-radius: 8px;
+        background: #293952;
+        padding: 0 5px;
+        text-align: center;
+
+        a {
+          font-family: 'Roboto', sans-serif;
+          text-transform: capitalize;
+          color: #ffffff;
+          font-size: 24px;
+          line-height: 40px;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: center;
+          justify-content: center;
+          transition: .5s;
+
+          svg {
+            width: 75px;
+            height: 71px;
+            margin: 0 0 10px 0;
+
+            path {
+              fill: #ffffff;
+              transition: .5s;
+            }
+
+            @media only screen and (max-width: $medium-breakpoint) {
+              width: 70px;
+              height: 70px;
+            }
+          }
+
+          @media only screen and (max-width: $large-breakpoint) {
+            line-height: 28px;
+            font-size: 22px;
+          }
+        }
+
+        &:hover {
+          a {
+            color: #ffe42c;
+
+            svg {
+              path {
+                fill: #ffe42c;
+              }
+            }
+          }
+        }
+
+        @media only screen and (max-width: $large-breakpoint) {
+          width: calc(20% - 10px);
+        }
+
+        @media only screen and (max-width: $small-breakpoint) {
+          width: calc(50% - 10px);
+          margin-bottom: 10px;
+        }
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: $large-breakpoint) {
+    position: unset;
+    margin: 30px 0 0 0;
+  }
+}
+
+.three-block-container {
+  padding: 140px 0 40px 0;
+
+  h1 {
+    text-align: center;
+    font-family: 'Squada One', cursive;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+    color: #293952;
+    margin: 0 0 25px 0;
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      margin: 0 0 20px 0;
+    }
+  }
+
+  .three-block {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .block-company {
+      background: #ffffff;
+      border: 8px solid #ebebeb;
+      border-radius: 8px;
+      width: 370px;
+      margin: 32px 0 0 0;
+
+      .block-inside {
+        .top-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 20px 0 10px 0;
+
+          .logo {
+            background: #393939;
+            border-radius: 8px;
+            width: 100px;
+            height: 100px;
+
+            a {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              img {
+                width: 87px;
+              }
+            }
+          }
+
+          h5 {
+            color: #2b2b2b;
+            font-size: 20px;
+            margin: 10px 0 10px 0;
+          }
+
+          .star-container {
+            display: flex;
+            align-items: baseline;
+
+            .fas {
+              color: #ffd200;
+              font-size: 15px;
+              margin: 0 2px;
+
+              &.gray {
+                color: #fff;
+                font-size: 13px;
+              }
+            }
+
+            p {
+              font-family: 'Roboto', sans-serif;
+              font-weight: 700;
+              font-size: 14px;
+              color: #2b2b2b;
+            }
+          }
+        }
+
+        .middle-container {
+          height: 100px;
+          background: #ebebeb;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          h4 {
+            font-size: 18px;
+            color: #2b2b2b;
+            text-transform: capitalize;
+          }
+
+          h2 {
+            font-size: 24px;
+            color: #393939;
+            margin: 4px 0 4px 0;
+            transition: .5s;
+
+            &:hover {
+              color: #425673;
+            }
+          }
+
+          h3 {
+            font-size: 18px;
+            color: #393939;
+            text-transform: capitalize;
+          }
+        }
+
+        .bottom-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 15px 0 0 0;
+          padding: 0 20px;
+
+          .btn {
+            background: #293952;
+            transition: .5s;
+            border-radius: 8px;
+            width: 100%;
+
+            a {
+              font-family: 'Roboto', sans-serif;
+              font-weight: 900;
+              color: #ffffff;
+              font-size: 20px;
+              padding: 13px 0;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+            }
+
+            &:hover {
+              background: #607ba4;
+            }
+          }
+        }
+      }
+
+      .full-tc-apply {
+        text-align: center;
+        padding: 15px;
+        color: #999999;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 18px;
+
+        a {
+          font-family: 'Roboto', sans-serif;
+          font-weight: 300;
+          font-size: 12px;
+          line-height: 18px;
+          color: #999999;
+          transition: .5s;
+
+          &:hover {
+            color: #293952;
+          }
+        }
+      }
+
+      &.several {
+        border: 8px solid #ffe42c;
+        border-radius: 8px;
+        margin: 0 20px 0 20px;
+
+        .block-inside {
+          .top-container {
+            margin: 0 0 10px 0;
+
+            .top-title {
+              background: #ffe42c;
+              border-bottom-right-radius: 8px;
+              border-bottom-left-radius: 8px;
+              margin: 0 0 20px 0;
+
+              h3 {
+                font-family: 'Roboto', sans-serif;
+                font-weight: 900;
+                color: #293952;
+                font-size: 20px;
+                padding: 0 33px 8px 33px;
+              }
+            }
+          }
+
+          .middle-container {
+            background: #ffe42c;
+          }
+        }
+
+        @media only screen and (max-width: $large-breakpoint) {
+          margin: 0 20px 0 20px;
+        }
+
+        @media only screen and (max-width: $medium-breakpoint) {
+          margin: 20px 0 20px 0;
+          width: 500px;
+        }
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          width: 100%;
+        }
+      }
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        width: 500px;
+        margin: 0 0 0 0;
+      }
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        width: 100%;
+      }
+    }
+
+    @media only screen and (max-width: $large-breakpoint) {
+      justify-content: space-between;
+    }
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      flex-wrap: wrap;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+  @media only screen and (max-width: $large-breakpoint) {
+    padding: 80px 0 40px 0;
+  }
+}
+
+.enter-email-container {
+  background: #293952;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 36px 65px 34px 40px;
+  margin: 0 50px 0 50px;
+
+  svg {
+    width: 205px;
+    height: 205px;
+    flex-shrink: 0;
+
+    path {
+      fill: #ffe42c;
+    }
+  }
+
+  .contact-form-email {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 40px;
+
+    h2 {
+      text-transform: capitalize;
+      color: #ffffff;
+      font-size: 30px;
+      line-height: 32px;
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        text-align: center;
+      }
+
+      @media only screen and (max-width: $small-breakpoint) {
+        font-size: 28px;
+      }
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        font-size: 26px;
+      }
+    }
+
+    h6 {
+      text-transform: capitalize;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 20px;
+      color: #ffffff;
+      margin: 10px 0 18px 0;
+
+      @media only screen and (max-width: $small-breakpoint) {
+        font-size: 18px;
+      }
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+
+    form {
+      .enter-approve-email {
+        display: flex;
+        font-family: 'Roboto', sans-serif;
+
+        .enter-email {
+          width: 400px;
+          background: transparent;
+          font-weight: 300;
+          font-style: italic;
+          font-size: 16px;
+          color: #ffffff;
+          padding: 13.5px 15px 13.5px 15px;
+          border: 1px solid #ffffff;
+          border-bottom-left-radius: 8px;
+          border-top-left-radius: 8px;
+
+          @media only screen and (max-width: $small-breakpoint) {
+            width: 100%;
+            border-radius: 8px;
+          }
+        }
+
+        .approve-email-btn {
+          width: 200px;
+          font-weight: 900;
+          color: #293952;
+          font-size: 20px;
+          text-transform: capitalize;
+          background: #ffe42c;
+          border: none;
+          border-bottom-right-radius: 8px;
+          border-top-right-radius: 8px;
+          cursor: pointer;
+          transition: all 0.5s linear;
+
+          &:hover {
+            background: #dfc200;
+          }
+
+          @media only screen and (max-width: $small-breakpoint) {
+            border-radius: 8px;
+            margin: 20px 0 0 0;
+            padding: 13.5px 15px 13.5px 15px;
+          }
+        }
+
+        @media only screen and (max-width: $small-breakpoint) {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      .email-order {
+        display: flex;
+
+        .email-container {
+          font-family: 'Roboto', sans-serif;
+          font-weight: 300;
+          color: #ffffff;
+          font-size: 15px;
+          display: flex;
+          flex-direction: row-reverse;
+          margin: 20px 0 0 0;
+          align-items: center;
+        }
+
+        .email-container input {
+          display: none;
+        }
+
+        .mark {
+          background: url(assets/images/checkbox-empty.png) no-repeat;
+          flex-shrink: 0;
+          margin-right: 8px;
+          height: 19px;
+          width: 20px;
+          cursor: pointer;
+          position: relative;
+        }
+
+        .mark:after {
+          content: "";
+          background: url(assets/images/checkbox.png) no-repeat;
+          display: none;
+          width: 16px;
+          height: 16px;
+        }
+
+        .email-container input:checked ~ .mark:after {
+          display: block;
+        }
+      }
+
+      .notifications {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        color: #ffde00;
+        font-size: 15px;
+        margin: 10px 0 0 0;
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          text-align: center;
+        }
+      }
+    }
+
+    .remark {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      color: #607ba4;
+      text-align: justify;
+      margin-top: 15px;
+    }
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      margin: 20px 0 0 0;
+      align-items: center;
+    }
+  }
+
+  @media only screen and (max-width: $large-breakpoint) {
+    margin: 0 0 0 0;
+  }
+
+  @media only screen and (max-width: $medium-breakpoint) {
+    flex-direction: column;
+    padding: 36px 15px 34px 15px;
+  }
+}
+
+.type-of-games-container {
+  margin: 40px 0 50px 0;
+
+  h2 {
+    font-family: 'Squada One', cursive;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 40px;
+    line-height: 40px;
+    color: #293952;
+    text-align: center;
+  }
+
+  .type-of-games {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .block {
+      width: calc(25% - 15px);
+      height: 200px;
+      border-radius: 8px;
+      background: #ebebeb;
+      transition: .5s;
+      margin: 30px 0 0 0;
+
+      a {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        text-transform: capitalize;
+        color: #293952;
+        font-size: 30px;
+        line-height: 40px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 5px;
+        transition: .5s;
+
+        svg {
+          width: 90px;
+          height: 90px;
+
+          path {
+            fill: #293952;
+            transition: .5s;
+          }
+        }
+
+        @media only screen and (max-width: $large-breakpoint) {
+          font-size: 28px;
+          line-height: 38px;
+        }
+      }
+
+      &:hover {
+        a {
+          color: #ffffff;
+
+          svg {
+
+            path {
+              fill: #ffffff;
+            }
+          }
+        }
+      }
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        width: calc(50% - 15px);
+      }
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        width: 100%;
+      }
+
+      &:hover {
+        background: #293952;
+      }
+    }
+  }
+}
+
+.description-container {
+  background: #ffffff;
+
+  .description-content {
+    width: 1300px;
+    margin: 0 auto 0 auto;
+    color: #293952;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    padding: 35px 0 20px 0;
+
+    h1, h2 {
+      font-family: 'Squada One', cursive;
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 40px;
+      border-left: 6px solid #ffe42f;
+      padding: 0 0 0 10px;
+      margin: 25px 0;
+      text-align: initial;
+
+      @media only screen and (max-width: $large-breakpoint) {
+        font-size: 38px;
+        line-height: 38px;
+      }
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        font-size: 36px;
+        line-height: 36px;
+      }
+
+      @media only screen and (max-width: $small-breakpoint) {
+        font-size: 34px;
+        line-height: 34px;
+      }
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        font-size: 30px;
+        line-height: 26px;
+        margin: 20px 0;
+      }
+    }
+
+    h3, h4 {
+      font-family: 'Squada One', cursive;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 39.94px;
+      margin: 25px 0;
+      text-align: initial;
+
+      @media only screen and (max-width: $large-breakpoint) {
+        font-size: 28px;
+        line-height: 37px;
+      }
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        font-size: 26px;
+        line-height: 35px;
+        text-align: center;
+      }
+
+      @media only screen and (max-width: $small-breakpoint) {
+        font-size: 24px;
+        line-height: 24px;
+      }
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        margin: 20px 0;
+      }
+    }
+
+    h5, h6 {
+      font-family: 'Squada One', cursive;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 39.94px;
+      margin: 25px 0;
+      text-align: initial;
+
+      @media only screen and (max-width: $small-breakpoint) {
+        text-align: center;
+      }
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        font-size: 18px;
+        line-height: 30px;
+        margin: 20px 0;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 26px;
+      text-align: justify;
+      margin: 25px 0;
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        margin: 15px 0;
+      }
+    }
+
+    a {
+      color: #C99700;
+      transition: .5s;
+
+      &:hover {
+        color: #293952;
+      }
+    }
+
+    ul {
+      margin: 25px 0;
+
+      li {
+        list-style: none;
+
+        &::before {
+          content: url("assets/images/check-square-solid.svg");
+          padding: 1px 10px 0 0;
+        }
+      }
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        margin: 20px 0;
+      }
+    }
+
+    ol {
+      margin: 25px 0 25px 18px;
+
+      li {
+        list-style: decimal;
+      }
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        margin: 20px 0 20px 18px;
+      }
+    }
+
+    blockquote {
+      font-size: 16px;
+      line-height: 26px;
+      text-align: justify;
+      margin: 25px 0;
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        margin: 15px 0;
+      }
+    }
+
+    &.page-home {
+      padding: 10px 0 20px 0;
+
+      @media only screen and (max-width: $large-breakpoint) {
+        width: 100%;
+        padding: 10px 15px 20px 15px;
+      }
+    }
+
+    &.single-post {
+      width: 1010px;
+      padding: 0 0 10px 0;
+
+      h1 {
+        margin: 55px 0 25px 0;
+
+
+        @media only screen and (max-width: $large-breakpoint) {
+          font-size: 38px;
+          line-height: 38px;
+        }
+
+        @media only screen and (max-width: $medium-breakpoint) {
+          font-size: 36px;
+          line-height: 36px;
+        }
+
+        @media only screen and (max-width: $small-breakpoint) {
+          font-size: 34px;
+          line-height: 34px;
+        }
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          font-size: 30px;
+          line-height: 26px;
+          margin: 20px 0 20px 0;
+        }
+      }
+
+      .back-btn {
+        background: #293952;
+        width: 250px;
+        border-radius: 8px;
+        display: flex;
+        transition: .5s;
+        margin: 0 0 40px 0;
+
+        a {
+          font-size: 20px;
+          color: #ffffff;
+          font-weight: 900;
+          font-family: 'Source Sans Pro', sans-serif;
+          width: 100%;
+          padding: 13.2px 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-transform: uppercase;
+        }
+
+        &:hover {
+          background: #607ba4;
+        }
+      }
+
+      @media only screen and (max-width: $large-breakpoint) {
+        width: 100%;
+        padding: 35px 15px 20px 15px;
+      }
+    }
+
+    &.page-online-casino {
+      padding: 10px 0 20px 0;
+
+      @media only screen and (max-width: $large-breakpoint) {
+        width: 100%;
+        padding: 10px 15px 20px 15px;
+      }
+    }
+
+    &.page-guide {
+      padding: 1px 0 20px 0;
+
+      @media only screen and (max-width: $large-breakpoint) {
+        width: 100%;
+        padding: 10px 15px 20px 15px;
+      }
+    }
+
+    &.page-terms {
+      width: 1010px;
+
+      @media only screen and (max-width: $large-breakpoint) {
+        width: 100%;
+        padding: 35px 15px 20px 15px;
+      }
+    }
+
+    @media only screen and (max-width: $large-breakpoint) {
+      width: 100%;
+      padding: 35px 15px 20px 15px;
+    }
+
+    @media only screen and (max-width: $small-breakpoint) {
+      padding: 25px 15px 20px 15px;
+    }
+  }
+}
+
+.companies-container {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 50px 40px 50px;
+
+  .companies-block {
+    .companies {
+      background: #ebebeb;
+      border-radius: 8px;
+      display: flex;
+      padding: 30px;
+
+      .logo {
+        width: 200px;
+        height: 175px;
+        background: #393939;
+        border-radius: 8px;
+        flex-shrink: 0;
+
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+
+          img {
+            width: 150px;
+          }
+        }
+      }
+
+      .bonus-btn-companies-options {
+        width: 100%;
+        margin: 0 0 0 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .bonus-btn-container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .bonus {
+            display: flex;
+            flex-direction: column;
+            width: 380px;
+
+            p {
+              font-weight: 400;
+              font-size: 18px;
+              color: #293952;
+              text-transform: capitalize;
+            }
+
+            h2 {
+              font-weight: 900;
+              font-size: 30px;
+              transition: .5s;
+              color: #293952;
+              line-height: 36px;
+              margin: 5px 0;
+
+              &:hover {
+                color: #425673;
+              }
+
+              @media only screen and (max-width: $medium-breakpoint) {
+                font-size: 28px;
+              }
+
+              @media only screen and (max-width: $mini-breakpoint) {
+                font-size: 26px;
+              }
+            }
+
+            h4 {
+              font-size: 20px;
+              color: #293952;
+              font-weight: 400;
+            }
+
+            @media only screen and (max-width: $large-breakpoint) {
+              text-align: center;
+              align-items: center;
+            }
+
+            @media only screen and (max-width: $small-breakpoint) {
+              width: 100%;
+              padding: 0 50px;
+            }
+
+            @media only screen and (max-width: $mini-breakpoint) {
+              width: 100%;
+              padding: 0 0;
+            }
+          }
+
+          .btn-container {
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .btn {
+              background: #293952;
+              display: flex;
+              align-items: center;
+              transition: .5s;
+              width: 100%;
+              border-radius: 8px;
+
+              a {
+                font-family: 'Source Sans Pro', sans-serif;
+                font-weight: 900;
+                font-size: 20px;
+                text-transform: uppercase;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                color: #ffffff;
+                padding: 12.5px 0;
+              }
+
+              &:hover {
+                background: #607ba4;
+              }
+            }
+
+            .full-tc-apply {
+              margin: 5px 0 0 0;
+              font-family: 'Source Sans Pro', sans-serif;
+              font-weight: 300;
+              font-size: 16px;
+              color: #293952;
+              text-align: center;
+              transition: .5s;
+
+              &:hover {
+                color: #607ba4;
+              }
+            }
+
+            @media only screen and (max-width: $large-breakpoint) {
+              display: none;
+            }
+          }
+
+          @media only screen and (max-width: $large-breakpoint) {
+            flex-direction: column;
+            margin: 15px 0;
+          }
+        }
+
+        .companies-options {
+          display: flex;
+          width: 860px;
+
+          .score {
+            display: flex;
+            align-items: center;
+            margin: 0 70px 0 0;
+
+            svg {
+              width: 44px;
+              height: 41px;
+              margin: 0 10px 0 0;
+              flex-shrink: 0;
+
+              path {
+                fill: #607ba4;
+              }
+
+              @media only screen and (max-width: $large-breakpoint) {
+                width: 42px;
+                height: 39px;
+              }
+            }
+
+            .our-score-container {
+              display: flex;
+              flex-direction: column;
+
+              h6 {
+                font-size: 16px;
+                line-height: 28px;
+                color: #293952;
+                text-transform: capitalize;
+              }
+
+              p {
+                font-weight: 400;
+                color: #607ba4;
+                font-size: 14px;
+              }
+            }
+
+            @media only screen and (max-width: $large-breakpoint) {
+              margin: 0 0 10px 0;
+            }
+          }
+
+          .rating {
+            display: flex;
+            align-items: center;
+            margin: 0 70px 0 0;
+
+            svg {
+              width: 38px;
+              height: 38px;
+              margin: 0 10px 0 0;
+              flex-shrink: 0;
+
+              path {
+                fill: #607ba4;
+              }
+
+              @media only screen and (max-width: $large-breakpoint) {
+                width: 37px;
+                height: 38px;
+              }
+            }
+
+            .our-score-container {
+              display: flex;
+              flex-direction: column;
+
+              h6 {
+                font-size: 16px;
+                line-height: 28px;
+                color: #293952;
+                text-transform: capitalize;
+              }
+
+              p {
+                font-weight: 400;
+                color: #607ba4;
+                font-size: 14px;
+              }
+            }
+
+            @media only screen and (max-width: $large-breakpoint) {
+              margin: 0 0 10px 0;
+            }
+          }
+
+          .devices {
+            display: flex;
+            align-items: center;
+            margin: 0 70px 0 0;
+
+            svg {
+              width: 48px;
+              height: 49px;
+              margin: 0 10px 0 0;
+              flex-shrink: 0;
+
+              path {
+                fill: #607ba4;
+              }
+
+              @media only screen and (max-width: $large-breakpoint) {
+                width: 47px;
+                height: 47px;
+              }
+            }
+
+            .our-score-container {
+              display: flex;
+              flex-direction: column;
+
+              h6 {
+                font-size: 16px;
+                color: #293952;
+                line-height: 26px;
+                text-transform: capitalize;
+              }
+
+              p {
+                font-weight: 400;
+                color: #607ba4;
+                font-size: 14px;
+              }
+            }
+
+            @media only screen and (max-width: $large-breakpoint) {
+              margin: 0 0 10px 0;
+            }
+          }
+
+          .bonus-code {
+            display: flex;
+            align-items: center;
+
+            svg {
+              width: 45px;
+              height: 42px;
+              margin: 0 10px 0 0;
+              flex-shrink: 0;
+
+              path {
+                fill: #607ba4;
+              }
+
+              rect {
+                fill: #607ba4;
+              }
+
+              @media only screen and (max-width: $large-breakpoint) {
+                width: 44px;
+                height: 42px;
+              }
+            }
+
+            .our-score-container {
+              display: flex;
+              flex-direction: column;
+
+              h6 {
+                font-size: 16px;
+                color: #293952;
+                text-transform: capitalize;
+                line-height: 27px;
+              }
+
+              p {
+                font-weight: 400;
+                color: #607ba4;
+                font-size: 14px;
+              }
+            }
+          }
+
+          @media only screen and (max-width: $large-breakpoint) {
+            flex-direction: column;
+            margin: 0 auto 15px auto;
+            width: auto;
+          }
+        }
+
+        .btn-breakpoint {
+          display: none;
+
+          @media only screen and (max-width: $large-breakpoint) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 250px;
+            margin: 0 auto;
+
+            .btn {
+              background: #293952;
+              display: flex;
+              align-items: center;
+              transition: .5s;
+              width: 100%;
+              border-radius: 8px;
+
+              a {
+                text-transform: uppercase;
+                font-family: 'Source Sans Pro', sans-serif;
+                font-weight: 900;
+                font-size: 20px;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                color: #ffffff;
+                padding: 12.5px 0;
+              }
+
+              &:hover {
+                background: #607ba4;
+              }
+            }
+
+            .full-tc-apply {
+              margin: 5px 0 0 0;
+              font-family: 'Source Sans Pro', sans-serif;
+              font-weight: 300;
+              font-size: 16px;
+              color: #293952;
+              text-align: center;
+              transition: .5s;
+
+              &:hover {
+                color: #607ba4;
+              }
+            }
+          }
+
+          @media only screen and (max-width: $mini-breakpoint) {
+            width: 100%;
+          }
+        }
+
+        @media only screen and (max-width: $large-breakpoint) {
+          margin: 0;
+        }
+      }
+
+      @media only screen and (max-width: $large-breakpoint) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      @media only screen and (max-width: $small-breakpoint) {
+        padding: 20px 10px 10px 10px;
+      }
+    }
+
+    .plus18-terms-text {
+      margin: 20px 0 20px 0;
+
+      p {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 18px;
+        color: #999999;
+      }
+    }
+
+    &:last-child {
+      .plus18-terms-text {
+        margin: 20px 0 0 0;
+      }
+    }
+  }
+
+  &.guides-page {
+    margin: 0 auto 0 auto;
+
+    .companies-block {
+      .plus18-terms-text {
+        margin: 0 0 20px 0;
+      }
+    }
+  }
+
+  &.single-post-page {
+    margin: 0 50px 0 50px;
+  }
+
+  @media only screen and (max-width: $large-breakpoint) {
+    margin: 40px 0 40px 0;
+  }
+}
+
+.guides-container {
+  width: 1200px;
+  margin: 40px auto 55px auto;
+
+  .guides-post {
+    background: #ebebeb;
+    border-radius: 8px;
+    height: 200px;
+    padding: 35px 40px 30px 45px;
+    margin: 0 0 20px 0;
+
+    .title-paragraph {
+      display: flex;
+
+      .title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 294px;
+
+        svg {
+          width: 80px;
+          height: 90px;
+          flex-shrink: 0;
+
+          path {
+            fill: #293952;
+          }
+        }
+
+        h4 {
+          font-size: 30px;
+          line-height: 40px;
+          color: #293952;
+          text-transform: capitalize;
+          text-align: center;
+
+          @media only screen and (max-width: $medium-breakpoint) {
+            font-size: 28px;
+            line-height: 38px;
+          }
+
+          @media only screen and (max-width: $mini-breakpoint) {
+            font-size: 26px;
+            line-height: 36px;
+          }
+        }
+
+        @media only screen and (max-width: $medium-breakpoint) {
+          width: 100%;
+        }
+      }
+
+      .paragraph {
+        margin-left: 36px;
+        align-items: flex-start;
+        width: 100%;
+        position: relative;
+
+        p {
+          font-size: 16px;
+          line-height: 26px;
+          color: #293952;
+          text-align: justify;
+        }
+
+        a {
+          font-family: 'Roboto', sans-serif;
+          font-weight: 900;
+          font-size: 16px;
+          line-height: 26px;
+          color: #293952;
+          transition: .5s;
+          position: absolute;
+          left: 41%;
+          top: 40%;
+
+          svg {
+            width: 15px;
+            height: 15px;
+            color: #293952;
+            margin: 0 0 -2px 0;
+            flex-shrink: 0;
+
+            path {
+              fill: #293952;
+              transition: .5s;
+            }
+          }
+
+          &:hover {
+            svg {
+              path {
+                fill: #607ba4;
+              }
+            }
+
+            color: #607ba4;
+          }
+
+          @media only screen and (max-width: $large-breakpoint) {
+            position: unset;
+          }
+        }
+
+        @media only screen and (max-width: $medium-breakpoint) {
+          margin: 10px 0 0 0;
+        }
+      }
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media only screen and (max-width: $large-breakpoint) {
+      height: auto;
+    }
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      padding: 30px 15px 30px 15px;
+    }
+  }
+
+  @media only screen and (max-width: $large-breakpoint) {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+footer {
+  background: #293952;
+
+  .footer-container {
+    width: 980px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0 40px 0;
+
+    .logo {
+      a {
+        svg {
+          width: 242px;
+          height: 45px;
+          flex-shrink: 0;
+
+          @media only screen and (max-width: $mini-breakpoint) {
+            height: 35px;
+          }
+        }
+      }
+    }
+
+    .footer-menu {
+      margin: 30px 0 30px 0;
+
+      ul {
+        display: flex;
+
+        li {
+          list-style: none;
+
+          a {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            color: #ffffff;
+            font-size: 22px;
+            line-height: 33.5px;
+            transition: .5s;
+            text-transform: uppercase;
+
+            &:hover {
+              color: #ffe42c;
+            }
+
+            @media only screen and (max-width: $medium-breakpoint) {
+              font-size: 20px;
+              line-height: 20px;
+            }
+
+            @media only screen and (max-width: $mini-breakpoint) {
+              font-size: 18px;
+              line-height: 30px;
+            }
+          }
+
+          &.current-menu-item {
+            a {
+              color: #ffe42c;
+            }
+          }
+
+          &:nth-child(even) {
+            margin: 0 40px;
+
+            @media only screen and (max-width: $large-breakpoint) {
+              margin: 0 30px;
+            }
+
+            @media only screen and (max-width: $small-breakpoint) {
+              margin: 20px 0;
+            }
+
+            @media only screen and (max-width: $mini-breakpoint) {
+              margin: 10px 0;
+            }
+          }
+        }
+
+        @media only screen and (max-width: $small-breakpoint) {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      @media only screen and (max-width: $small-breakpoint) {
+        margin: 20px 0 12px 0;
+      }
+    }
+
+    .sentence-text {
+      font-size: 16px;
+      line-height: 32px;
+      color: #607ba4;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    .icon-container {
+      margin: 30px 0 30px 0;
+
+      a {
+        svg {
+          max-width: 191px;
+          height: 50px;
+          fill: #607ba4;
+          transition: .5s;
+
+          path {
+            fill: #607ba4;
+            transition: .5s;
+          }
+
+          g {
+            fill: #607ba4;
+            transition: .5s;
+          }
+
+          @media only screen and (max-width: $mini-breakpoint) {
+            height: 40px;
+          }
+        }
+
+        &:hover {
+          svg {
+            fill: #ffffff;
+
+            path {
+              fill: #ffffff;
+            }
+
+            g {
+              fill: #ffffff;
+            }
+          }
+        }
+
+        &:nth-child(even) {
+          margin: 0 60px;
+
+          @media only screen and (max-width: $large-breakpoint) {
+            margin: 0 50px;
+          }
+
+          @media only screen and (max-width: $medium-breakpoint) {
+            margin: 10px 0;
+          }
+        }
+      }
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      @media only screen and (max-width: $small-breakpoint) {
+        margin: 20px 0 15px 0;
+      }
+    }
+
+    .footer-menu-bottom {
+      margin-bottom: 30px;
+
+      ul {
+        display: flex;
+
+        li {
+          list-style: none;
+
+          a {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            color: #ffffff;
+            font-size: 16px;
+            line-height: 32px;
+            transition: .5s;
+
+            &:hover {
+              color: #ffe42c;
+            }
+
+            @media only screen and (max-width: $mini-breakpoint) {
+              line-height: 28px;
+            }
+          }
+
+          &.current-menu-item {
+            a {
+              color: #ffe42c;
+            }
+          }
+
+          &:nth-child(even) {
+            margin: 0 20px;
+
+            @media only screen and (max-width: $mini-breakpoint) {
+              margin: 5px 0;
+            }
+          }
+        }
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      @media only screen and (max-width: $small-breakpoint) {
+        margin-bottom: 10px;
+      }
+    }
+
+    .terms-text {
+      font-size: 16px;
+      line-height: 32px;
+      color: #607ba4;
+      text-align: center;
+    }
+
+    @media only screen and (max-width: $large-breakpoint) {
+      width: 100%;
+      padding: 30px 15px 30px 15px;
+    }
+  }
+}
+
+
+
